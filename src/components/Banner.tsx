@@ -22,7 +22,7 @@ const Banner = () => {
         OpenAI&apos;s Explosive Growth Is Shaping the Future, But Costing a Fortune
         </h2>
         <p>
-        OpenAI's rapid expansion has positioned the company at the forefront of AI innovation, 
+        OpenAI&apos;s rapid expansion has positioned the company at the forefront of AI innovation, 
         revolutionizing industries from healthcare to entertainment. 
         With cutting-edge technologies like GPT and DALL·E, OpenAI is reshaping 
         how we interact with artificial intelligence.However, the costs 

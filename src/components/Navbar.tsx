@@ -16,7 +16,16 @@ import { ThemeContext } from "@/context/themeContext";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const { isDarkMode, toggleTheme }: any = useContext(ThemeContext);
+
+  // Properly type the useContext hook to avoid using `any`
+  const themeContext = useContext(ThemeContext);
+
+  // If the context is undefined (e.g., not within a ThemeProvider), throw an error.
+  if (!themeContext) {
+    throw new Error("ThemeContext must be used within a ThemeProvider");
+  }
+
+  const { isDarkMode, toggleTheme } = themeContext;
 
   return (
     <header
