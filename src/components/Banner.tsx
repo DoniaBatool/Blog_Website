@@ -28,8 +28,8 @@ const Banner = () => {
         how we interact with artificial intelligence.However, the costs 
         associated with this growth are staggering.
         <br/><br/>
-        Despite the significant financial drain, OpenAI’s trajectory is largely positive, as its 
-        technologies gain widespread adoption and investment. Still, the company’s 
+        Despite the significant financial drain, OpenAI&apos;s trajectory is largely positive, as its 
+        technologies gain widespread adoption and investment. Still, the company&apos;s 
         ability to sustain this growth without sacrificing long-term profitability is under scrutiny. 
         The burning question is whether OpenAI can balance its ambitious innovations with the need for 
         financial stability. </p>
