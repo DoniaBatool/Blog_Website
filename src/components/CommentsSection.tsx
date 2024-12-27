@@ -10,7 +10,11 @@ type Comment = {
   date: string;
 };
 
-const CommentSection = () => {
+type CommentSectionProps = {
+  postId: string; // Pass postId to uniquely identify the post
+};
+
+const CommentSection: React.FC<CommentSectionProps> = ({ postId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -23,18 +27,20 @@ const CommentSection = () => {
     content: "",
   });
 
-  // Load comments from local storage when the component mounts
+  // Load comments for this specific post from localStorage when the component mounts
   useEffect(() => {
-    const storedComments = localStorage.getItem("comments");
+    const storedComments = localStorage.getItem(`comments_${postId}`);
     if (storedComments) {
       setComments(JSON.parse(storedComments));
     }
-  }, []);
+  }, [postId]);
 
-  // Save comments to local storage whenever they change
+  // Save comments to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("comments", JSON.stringify(comments));
-  }, [comments]);
+    if (comments.length > 0) {
+      localStorage.setItem(`comments_${postId}`, JSON.stringify(comments));
+    }
+  }, [comments, postId]);
 
   const validateForm = () => {
     let isValid = true;
@@ -133,7 +139,7 @@ const CommentSection = () => {
         {/* Comment Content Field */}
         <div>
           <label className="block text-sm font-medium mb-1">
-            Comment (max 100 characters)
+            Comment (max 300 characters)
           </label>
           <textarea
             value={formData.content}

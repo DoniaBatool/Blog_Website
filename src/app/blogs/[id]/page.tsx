@@ -66,7 +66,7 @@ const NewsDetailspage = async ({ params }: { params: { id: string } }) => {
         {/* Full Description */}
         <p className=" mb-4">{post?.description}</p>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, fugit, adipisci commodi ea alias voluptatibus consequuntur neque nulla ex dicta reiciendis cupiditate quisquam quae. Vitae provident fugit officia fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam laboriosam perspiciatis ad labore repudiandae quis, accusamus inventore. Eius aperiam obcaecati molestias possimus nulla saepe reprehenderit rerum voluptas veritatis? Expedita, sed?</p>
-        <CommentSection/>
+        <CommentSection postId={params.id} />
       </article>
     </section>
   );
